@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+
+    <title>Veridian</title>
+
+    <style>
+
+        .mycontainer {
+            padding-top: 10px;
+            padding-left: 30px;
+            padding-right: 15px;
+        }
+
+    </style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+      <div class="container">
+
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        
+          </button>
+
+          <img class="navbar-brand" src="../images/logo.svg" alt="Logo">
+          <a class="navbar-brand" href="#">Veridian</a>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">SOBRE</a></li>
+            <li><a href="#register">CADASTRO</a></li>
+            <li><a href="#list">LISTAGEM DE CIDADÃOS</a></li>
+            <li><a href="#medical">CONSULTA MÉDICA</a></li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </nav>
+      
+    <div class="container" style="margin-top: 70px;">
+        
+        <button class="btn btn-success" id="myBtn"><span class="glyphicon glyphicon-plus-sign"></span></button>
+
+        <div class="text-center" id="div-float">
+
+            <div class="form-group" style="margin-top: 10px;">
+                <label for="attest_days" style="color: white;">Quantidade de dias: *</label>
+                <input type="text" class="form-control" placeholder="DIGITE OS DIAS" id="attest_days">
+            </div>
+
+            <div class="form-group" style="margin-top: 10px;">
+                <label for="cid" style="color: white;">CID: *</label>
+                <input type="text" class="form-control" placeholder="DIGITE O CID" id="cid">
+            </div>
+
+            <button class="btn btn-primary" id="person-btn">Gerar Atestado</button>
+        </div>
+
+        <div style="display: flex;">
+            <h3 style="width: 100%;">Informação Cadastral</h3>
+            <img src="../images/fi-rr-user.svg" alt="Cidadão">
+            <hr>
+        </div>
+
+        <fieldset class="group">
+
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" id="name" disabled>
+                </div>
+            </div>
+
+            <div class="form-group" style="width: 40%;">
+                <label for="cpf">CPF:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                    <input type="text" class="form-control" id="cpf" disabled>
+                </div>
+            </div>
+
+            <div class="form-group" style="width: 40%;">
+                <label for="prontuario">Prontuário:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                    <input type="text" class="form-control" id="prontuario" disabled>
+                </div>
+            </div>
+
+        </fieldset>
+        
+        <fieldset class="group">
+
+            <div class="form-group">
+                <label for="mother">Nome da Mãe:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" id="mother" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cns">CNS:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                    <input type="text" class="form-control" id="cns" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="born_day">Data de Nascimento:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input type="text" class="form-control" id="born_day" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Idade:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" id="age" disabled>
+                </div>
+            </div>
+
+        </fieldset>
+
+       
+
+        <h3>Informação de Atendimento</h3>
+        <hr>
+
+        <fieldset class="group">
+
+            <div class="form-group" style="width: 35%;">
+                <label for="date">Data:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input type="text" class="form-control" id="date" disabled>
+                </div>
+            </div>
+            
+            <div class="form-group" style="width: 30%;">
+                <label for="hour">Hora:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    <input type="text" class="form-control" id="hour" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="doctor">Médico:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <select class="form-control" id="doctor" disabled>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="admission">Recepcionista:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" id="admission" disabled>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+
+            <div class="form-group">
+                <label for="initial_state">Queixa inicial do Paciente:</label>
+                <input type="text" class="form-control" id="initial_state" disabled>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="group">
+
+            <div class="form-group">
+                <label for="blood_pressure">Pressão Arterial:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span>
+                    <input type="text" class="form-control" id="blood_pressure" disabled>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="temperature">Temperatura Axilar:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span>
+                    <input type="text" class="form-control" id="temperature" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="heart_rate">Frequência Cardíaca:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span>
+                    <input type="text" class="form-control" id="heart_rate" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="respiratory_frequency">Frequência Respiratória:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span>
+                    <input type="text" class="form-control" id="respiratory_frequency" disabled>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Peso:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" id="weight" disabled>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <hr style="margin: 20px 10px;">
+
+        <fieldset class="group">
+
+            <div class="form-group">
+                <label for="emotional_state">Estado Emocional:</label> <br>
+
+                <div class="checkbox">
+                    <label><input type="checkbox" disabled>Tranquilo</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" disabled>Ansioso</label>
+                </div>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" disabled>Agressivo</label>
+                </div>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" disabled>Triste</label>
+                </div>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" disabled>Agitado</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="emotional_state">Nível de Consciência:</label> <br>
+
+                <div class="checkbox">
+                    <label><input type="checkbox" disabled>Acordado</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" disabled>Sonolento</label>
+                </div>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" disabled>Orientado</label>
+                </div>
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" disabled>Desorientado</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="emotional_state">Locomoção:</label> <br>
+
+                <div class="checkbox">
+                    <label><input type="checkbox" disabled>Deambulando</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" disabled>Acamado</label>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="group">
+
+            <div class="form-group">
+                <label for="allergies">Se houver, descreva alterações motoras:</label>
+                <textarea class="form-control" rows="5" id="allergies" disabled></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="allergies">Se houver, descreva alterações na fala:</label>
+                <textarea class="form-control" rows="5" id="allergies" disabled></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="allergies">Se houver, descreva alergias:</label>
+                <textarea class="form-control" rows="5" id="allergies" disabled></textarea>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="group">
+
+            <div class="form-group">
+                <label for="obs">Observações Gerais:</label>
+                <textarea class="form-control" rows="5" id="obs" disabled></textarea>
+            </div>
+
+        </fieldset>
+
+        <form id="form" action="">
+
+            <fieldset class="group">
+
+                <div class="form-group" id="obs-div">
+                    <label for="obs">Conduta médica:</label>
+                    <textarea class="form-control" rows="5" id="obs"></textarea>
+                </div>
+
+                
+                <div tabindex="0" class="form-group" id="div-table">
+                    <div class="table-responsive">          
+                        <table class="table" id="table" style="min-height: 140px;">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Medicamento</th>
+                                <th></th>
+                                <th>Qtd</th>
+                                <th><a id="add-medicament" onclick="tableForm()"><span class="glyphicon glyphicon-plus"></span></a></th>
+                            </tr>
+                            </thead>
+                            <tbody id="table-body">
+                            <tr>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p><strong>Para cancelar a edição aperte a tecla ESC.</strong></p>
+                </div>
+
+            </fieldset>
+
+            <div class="text-center">
+                <button class="btn btn-default" style="width: fit-content;"><span class="glyphicon glyphicon-repeat"></span> Voltar</button>
+                <button type="submit" class="btn btn-primary" style="margin-bottom: 0px; width: fit-content;"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
+            </div>
+
+        </form>
+    </div>
+    
+    <br style="margin-bottom: 100px;">
+    
+    <footer class="container-fluid text-center">
+      <p><span class="glyphicon glyphicon-map-marker"></span> Rua tal, 123, Cidade - MG</p>
+      <p><span class="glyphicon glyphicon-phone"></span> (33) 99999-9999</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>  email@dominio.com</p>
+    </footer>
+  </body>
+
+  <script src="../js/main.js"></script>
+</html>
