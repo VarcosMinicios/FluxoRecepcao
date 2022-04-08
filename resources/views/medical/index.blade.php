@@ -264,7 +264,7 @@ while (strlen($attendance_code) < 6) {
 
     </fieldset>
 
-    <form id="form" action="{{route('medical_finalize', ['id' => $treat->id])}}" method="post">
+    <form id="form" action="{{route('medical_finalize', ['id' => $treat->id, 'attendance_id' => $attendance->id])}}" method="post">
 
         @csrf
         {{ method_field('PATCH') }}

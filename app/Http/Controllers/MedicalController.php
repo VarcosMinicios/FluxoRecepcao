@@ -105,25 +105,19 @@ class MedicalController extends Controller
      *
      * @param  \App\Http\Requests\MedicalRequest  $request
      * @param  int  $id
+     * @param int $attendance_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $attendance_id)
     {
         $treatment = Treatment::find($id);
 
         $treatment->update($request->all());
 
-        return redirect()->route('medical_show')->with(['success' => true, 'message' => 'Atendimento Finalizado!']);
-    }
+        $citizen_treated = Queue::find($attendance_id);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $citizen_treated->delete();
+
+        return redirect()->route('medical_show')->with(['success' => true, 'message' => 'Atendimento Finalizado!']);
     }
 }

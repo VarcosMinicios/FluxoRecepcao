@@ -29,12 +29,12 @@ return new class extends Migration
             $table->string('emotional_state');
             $table->string('consciousness');
             $table->string('locomotion');
-            $table->string('motor_alteration')->nullable();
-            $table->string('speaking')->nullable();
-            $table->string('allergies')->nullable();
-            $table->string('obs');
-            $table->string('medical_conduct')->default('');
-            $table->longText('medicins')->default('');
+            $table->longText('motor_alteration')->nullable();
+            $table->longText('speaking')->nullable();
+            $table->longText('allergies')->nullable();
+            $table->longText('obs');
+            $table->longText('medical_conduct')->default('');
+            $table->longText('medicins')->nullable();
             $table->timestamps();
         });
     }

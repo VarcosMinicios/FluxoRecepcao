@@ -59,6 +59,6 @@ Route::controller(MedicalController::class)->group(function ()
 
     Route::get('/medicalList/sorted', 'show')->name('medical_show');
 
-    Route::patch('/medicalList/{id}', 'update')->name('medical_finalize');
+    Route::patch('/medicalList/{id}/{attendance_id}', 'update')->name('medical_finalize');
 
 });
